@@ -301,3 +301,13 @@ export type PluginOptionBoolean = PluginSettingBooleanDef & PluginSettingCommon 
 export type PluginOptionSelect = PluginSettingSelectDef & PluginSettingCommon & IsDisabled & IsValid<PluginSettingSelectOption>;
 export type PluginOptionSlider = PluginSettingSliderDef & PluginSettingCommon & IsDisabled & IsValid<number>;
 export type PluginOptionComponent = PluginSettingComponentDef & PluginSettingCommon;
+
+export function defineLocale<L extends LocaleDef>(l: L & Record<string, any>) {
+    return l;
+}
+
+export interface LocaleDef {
+    code: string;
+    name: string;
+    messages?: Record<string, string>;
+}
